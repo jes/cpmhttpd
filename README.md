@@ -21,7 +21,8 @@ way round.
 
 ## Compiling
 
-First, get the files onto your CP/M system any way you know how.
+First, get the files onto your CP/M system any way you know how. If you don't put them in drive D, modify all the source
+files to change the `#include` lines to reference the correct drive letter.
 
 Then, install the Hi-Tech C compiler as per https://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/
 
