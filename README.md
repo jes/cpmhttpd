@@ -13,6 +13,9 @@ It has no facility to retransmit dropped packets.
 
 It supports a maximum of 32 simultaneous clients.
 
+Incoming packet validation is... missing. It is likely that this program has an arbitrary remote code execution feature.
+Use it at your own risk etc.
+
 I wrote it all in CP/M using ZDE. It is meant to be compiled with the Hi-Tech C compiler, which crashes
 if your source files are too large, which is why both the "net" and "httpd" parts are split
 into many helpfully-named files. I doubt it will compile correctly with any other compiler
