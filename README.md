@@ -2,6 +2,8 @@
 
 This is a basic networking stack and web server for CP/M.
 
+It is occasionally available running on my RC2014 at http://moonship.jes.xxx:8118/
+
 It is not very good. It basically does the absolute minimum necessary to trick people into
 thinking that it is a working web server.
 
