@@ -39,7 +39,7 @@ Then wait approximately 7 minutes while it compiles.
 
 ## Usage
 
-You'll need to plug the "reader/punch" serial port into a more-capable machine that supports SLIP networking.
+You'll need to plug the "reader/punch" (serial port B on the RC2014) into a more-capable machine that supports SLIP networking.
 I use a Linux machine.
 
 On the Linux machine, in one terminal:
