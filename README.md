@@ -24,7 +24,10 @@ way round.
 
 ## Compiling
 
-First, get the files onto your CP/M system any way you know how. If you don't put them in drive D, modify all the source
+If you don't want to compile it, you can use the included `httpd.com` executable. Just copy it to your CP/M machine
+and proceed to the "Usage" section.
+
+If you do want to compile it, first get the source files onto your CP/M system any way you know how. If you don't put them in drive D, modify all the source
 files to change the `#include` lines to reference the correct drive letter.
 
 Then, install the Hi-Tech C compiler as per https://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/
