@@ -44,19 +44,17 @@ void increase_lrus() {
 }
 
 socket_t *lru_socket() {
-     socket_t *s = NULL;
+     socket_t *s = socktable;
      int i;
 
-     for (i = 0; i < MAX_SOCKET; i++) {
-          if (!s || socktable[i].lru > s->lru)
+     for (i = 1; i < MAX_SOCKET; i++) {
+          if (socktable[i].lru > s->lru)
                s = socktable+i;
      }
 
      /* TODO: send RST on the reused slot? */
      if (s->state != CLOSED && s->close)
           (*(s->close))(s);
-
-     printf("REUSE\n");
 
      return s;
 }
@@ -163,6 +161,9 @@ void process_tcp(unsigned char *buf, int len) {
      if (s->state != LISTEN && tcph_seq(buf+ihl) != s->remoteseq) 
           return;
 
+     increase_lrus();
+     s->lru = 0;
+
      /* TODO: tcp_retransmit(s) if we receive a duplicate ACK */
 
      s->remoteack = tcph_ack(buf+ihl);
@@ -246,4 +247,4 @@ the socket immediately if it goes into the TIME_WAIT state */
           free_socket(s);
      }
 }
-
+
