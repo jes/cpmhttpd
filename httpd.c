@@ -36,7 +36,7 @@ void httprecv(socket_t *s, unsigned char *buf, int len) {
      if (!c || c->state != READREQ)
           return;
 
-     if (c->recvlen + len >= SLIP_MAX) {
+     if (c->recvlen + len >= SLIP_MTU) {
           internal_response(c, 400, "Bad Request");
           return;
      }
